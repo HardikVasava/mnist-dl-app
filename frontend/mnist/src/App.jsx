@@ -13,7 +13,7 @@ function App() {
   const clearCanvas = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#1a1a1a"; // dark gray background
+    ctx.fillStyle = "#1a1a1a"; 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     setPrediction(null);
     setImageDataURL("");
@@ -31,7 +31,7 @@ function App() {
     const imgData = resizedCtx.getImageData(0, 0, 28, 28).data;
     const grayscaleData = [];
     for (let i = 0; i < imgData.length; i += 4) {
-      grayscaleData.push(imgData[i]); // red channel as grayscale
+      grayscaleData.push(imgData[i]); 
     }
 
     setImageDataURL(resizedCanvas.toDataURL());
@@ -59,7 +59,7 @@ function App() {
     const x = e.nativeEvent.clientX - rect.left;
     const y = e.nativeEvent.clientY - rect.top;
 
-    ctx.fillStyle = "#e0e0e0"; // soft white
+    ctx.fillStyle = "#e0e0e0"; 
     ctx.beginPath();
     ctx.arc(x, y, 10, 0, Math.PI * 2);
     ctx.fill();
